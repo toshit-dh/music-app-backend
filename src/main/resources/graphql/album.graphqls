@@ -1,0 +1,16 @@
+type Album {
+  id: ID!
+  title: String!
+  releaseDate: String!
+  artistDTO: Artist!
+  songs: [Song]
+}
+
+extend type Query {
+  getAllAlbums: [Album]
+  getAlbumById(id: ID!): Album
+}
+
+extend type Mutation {
+  createAlbum(title: String!, releaseDate: String!, artistId: ID!): Album
+}

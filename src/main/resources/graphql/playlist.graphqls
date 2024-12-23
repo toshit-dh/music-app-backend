@@ -1,0 +1,16 @@
+type Playlist {
+  id: ID!
+  name: String!
+  description: String
+  songs: [Song]
+  user: User!
+}
+
+extend type Query {
+  getAllPlaylists: [Playlist]
+  getPlaylistById(id: ID!): Playlist
+}
+
+extend type Mutation {
+  createPlaylist(name: String!, description: String, userId: ID!): Playlist
+}

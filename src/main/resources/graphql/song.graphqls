@@ -1,0 +1,17 @@
+scalar Duration
+type Song {
+  id: ID!
+  title: String!
+  duration: Duration
+  album: Album
+  playlist: Playlist
+}
+
+extend type Query {
+  getAllSongs: [Song]
+  getSongById(id: ID!): Song
+}
+
+extend type Mutation {
+  createSong(title: String!, duration: Int, albumId: ID, playlistId: ID): Song
+}

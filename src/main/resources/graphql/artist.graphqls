@@ -1,0 +1,24 @@
+type Artist {
+  id: ID!
+  name: String!
+  genre: String!
+  albums: [Album]
+}
+
+input ArtistInput{
+  name: String!
+  genre: String!
+}
+
+extend type Query {
+  getAllArtists: [Artist]
+  getArtistById(id: ID!): Artist
+}
+
+extend type Mutation {
+  createArtist(artist: ArtistInput!): Artist
+}
+
+type Subscription{
+  addArtistSubscription: Artist
+}

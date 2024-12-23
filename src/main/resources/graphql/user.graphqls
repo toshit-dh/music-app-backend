@@ -1,0 +1,14 @@
+type User {
+  id: ID!
+  username: String!
+  email: String!
+  playlists: [Playlist]
+}
+
+type Query {
+  getUserById(id: ID!): User
+}
+
+type Mutation {
+  createUser(username: String!, email: String!): User
+}
